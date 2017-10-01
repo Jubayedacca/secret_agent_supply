@@ -5,21 +5,26 @@ html{
   color:white;
 }
 
-/*title*/
 .container{
-  background-color: black;
-}
-.title{
-  background-color: black;
-  display: flex;
-  align-items: center;
-  font-size: 1rem;
   width:960px;
   margin: auto;
 }
+
+/*title*/
+
+.title{
+  background-color: black;
+}
+.title .container{
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
 .title img{
   height: 1.5rem;
   padding-left: 0.5rem;
+  display: inline-block;
 }
 .title h4{
   padding: .66rem 0 .66rem 0;
@@ -33,10 +38,7 @@ html{
   background-size: cover;
   height: 25rem;
 }
-.new_container{
-  width:960px;
-  margin: auto;
-}
+
 .new_items_text{
   position: relative;
   top: 9rem;
@@ -47,22 +49,19 @@ html{
   padding: 2rem 3rem;
 }
 .new_items_text h4{
-  padding-bottom: 2.5rem;
+  padding-bottom: 0.25rem;
 }
 .new_items_text h1{
   font-size: 2rem;
 }
 /*Menu*/
-.menu_container{
-  background-color: firebrick;
-}
+
 ul{
   display:flex;
   justify-content: space-between;
 }
 .menu{
-  width:960px;
-  margin: auto;
+  background-color: firebrick;
 }
 .menu a{
   text-decoration: none;
@@ -72,16 +71,17 @@ li{
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
+
+.mobile{
+  display: none;
+}
 /*items*/
 
 .items{
   display: flex;
-  position: relative;
-  top: 3rem;
+  margin-top: 3rem;
   justify-content: space-between;
   margin-bottom: 3rem;
-  width:960px;
-  margin: auto;
 }
 .pen,
 .watch,
@@ -105,12 +105,10 @@ li{
 }
 /*contact*/
 .contact{
-  padding-top: 6rem;
-  padding-bottom: 4rem;
+  margin-bottom: 4rem;
   display:flex;
   justify-content: space-between;
-  width:960px;
-  margin: auto;
+  flex-wrap: wrap;
 }
 
 .location,
@@ -134,9 +132,73 @@ li{
   background-color: black;
   height: 5rem;
   align-items: center;
-  width:960px;
-  margin: auto;
+ }
+
+/*resonsive website codes*/
+@media only screen and (max-width: 1024px) {
+ /* menu */
+ .desktop li {
+   display: none;
+ }
+.mobile a{
+  display:block;
 }
+.menu .mobile{
+  display:flex;
+  justify-content: center;
+}
+
+  /*items*/
+  .glass{
+    display: none;
+  }
+  .pen,
+  .watch{
+    width: 47%;
+  }
+}
+
+@media only screen and (max-width: 470px){
+
+/*universal*/
 .container{
-  background-color: black;
+  width: auto;
+}
+/*new items*/
+  .new_items{
+    height: 15rem;
+  }
+  .new_items_text{
+    top: 10rem;
+    padding: 1rem 2rem;
+  }
+  .new_items_text h4{
+    font-size: 0.77rem;
+    padding-bottom: 0.25rem;
+  }
+  .new_items_text h1{
+    font-size: 1rem;
+  }
+
+/*items*/
+  .watch{
+    display:none;
+  }
+  .pen{
+    width: 90%;
+  }
+/*contact*/
+  .location,
+  .hour{
+    width: 90%;
+  }
+  .hour{
+    margin-top: 0.5rem;
+  }
+
+  /*footer*/
+.footer{
+  justify-content: center;
+}
+
 }
